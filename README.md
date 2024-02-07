@@ -37,7 +37,7 @@ Clone the repo from github and place a `.env` (request it to me) file in the rep
 #### Build and run needed containers
 
 ```commandline
-docker-compose up -d
+docker compose up -d
 ```
 ### Testing with Postman -- Import the Postman collection
 
