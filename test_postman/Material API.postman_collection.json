@@ -1,0 +1,163 @@
+{
+	"info": {
+		"_postman_id": "599e11de-4cc8-4d6b-bcea-89c3def92948",
+		"name": "Material API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21999207"
+	},
+	"item": [
+		{
+			"name": "post material",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"density\": 1.19,\n    \"client_id\": \"lmbr\",\n    \"formula\": \"Fe2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5001/v1/material",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5001",
+					"path": [
+						"v1",
+						"material"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get material",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5001/v1/material/65c329f577d3d38123a36cf1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5001",
+					"path": [
+						"v1",
+						"material",
+						"65c329f577d3d38123a36cf1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search material",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5001/v1/search?include_elements=O",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5001",
+					"path": [
+						"v1",
+						"search"
+					],
+					"query": [
+						{
+							"key": "exclude_elements",
+							"value": "C",
+							"disabled": true
+						},
+						{
+							"key": "include_elements",
+							"value": "O"
+						},
+						{
+							"key": "minimal_density",
+							"value": "0.2",
+							"disabled": true
+						},
+						{
+							"key": "maximal_density",
+							"value": "0.5",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post heavy task",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5001/v1/calculate?formula=H2O",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5001",
+					"path": [
+						"v1",
+						"calculate"
+					],
+					"query": [
+						{
+							"key": "formula",
+							"value": "H2O"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:5001/v1/calculate_status/4f682239-2270-48ad-8ef7-b1e183d59a68",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5001/v1/calculate_status/4f682239-2270-48ad-8ef7-b1e183d59a68",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5001",
+					"path": [
+						"v1",
+						"calculate_status",
+						"4f682239-2270-48ad-8ef7-b1e183d59a68"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

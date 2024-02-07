@@ -10,7 +10,6 @@ What things you need to install the software and how to install them
 
 * [Python 3.9](https://www.python.org/downloads/)
 * Pipenv
-* RabbitMQ
 * Docker
 
 ### Installing for local development
@@ -39,9 +38,13 @@ Clone the repo from github and place a `.env` (request it to me) file in the rep
 
 ```commandline
 docker-compose up -d
+```
+### Testing with Postman -- Import the Postman collection
 
-```
-#### Retrieve an article: hit this endpoint on your prefer browser
-```commandline
-http://127.0.0.1:5001/article?tracking_number=TN12345679&carrier=UPS
-```
+To import the Postman collection online, follow these steps.
+
+1. Go to Postman and sign in.
+2. Select Import file > Upload files.
+3. Open the Material API JSON file located in `/test_postman`
+4. Select Import.
+5. Have fun!
