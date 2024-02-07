@@ -1,0 +1,34 @@
+services:
+
+  rabbitmq:
+    hostname: rabbitmq
+    image: "rabbitmq:3-management"
+    environment:
+      - RABBITMQ_DEFAULT_USER=admin
+      - RABBITMQ_DEFAULT_PASS=mypass
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+
+  celery_worker:
+    build:
+      context: ./
+      dockerfile: ./tasks/Dockerfile
+    user: nobody
+    env_file:
+      - .env
+    depends_on:
+      - rabbitmq
+
+  material_api:
+    build: .
+    container_name: flask
+    env_file:
+      - .env
+    ports:
+        - "5001:5000"
+    volumes:
+        - .:/code
+    depends_on:
+        - rabbitmq
+        - celery_worker
