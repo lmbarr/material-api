@@ -2,13 +2,11 @@ import sys
 
 from bson.objectid import ObjectId
 from celery import Celery
-from dotenv import load_dotenv
 from flask import Flask, request, jsonify
 from constants import MONGO_URI, BROKER_URI
 
 from mongo_db import get_mongo_db_connection, get_query_condition
 
-load_dotenv()
 client = get_mongo_db_connection()
 app = Flask(__name__)
 
